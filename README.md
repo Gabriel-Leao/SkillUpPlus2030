@@ -48,6 +48,57 @@ Tela dedicada às informações do usuário, mostrando seus dados cadastrados e 
 
 ---
 
+## Estrutura de Diretórios da Aplicação
+
+A organização do projeto segue boas práticas de arquitetura modular e separação de responsabilidades, permitindo fácil manutenção e reutilização dos componentes.
+
+```bash
+src/
+├── @types/ # Tipagens globais
+│ └── user.tsx # Interface do modelo de usuário
+
+├── app/ # Telas e rotas principais
+│ ├── (auth)/ # Telas de autenticação
+│ │ ├── layout.tsx
+│ │ ├── sign-in.tsx # Tela de Login
+│ │ └── sign-up.tsx # Tela de Cadastro
+│ │
+│ ├── (tabs)/ # Telas acessadas por abas
+│ │ ├── layout.tsx # Layout de navegação por Tabs
+│ │ ├── index.tsx # Tela Home
+│ │ ├── learning-tracks.tsx # Trilhas de Aprendizado
+│ │ ├── career-tips.tsx # Dicas de Carreira
+│ │ └── profile.tsx # Perfil do Usuário
+│ │
+│ └── layout.tsx # Layout principal do app
+
+├── assets/images/ # Imagens utilizadas no app
+│ └── profile-pic.png
+
+├── components/ # Componentes reutilizáveis
+│ ├── context/ # Contexto global de autenticação
+│ │ ├── UserProvider.tsx
+│ │ └── useUserContext.ts
+│ │
+│ ├── form/ # Componentes de formulários
+│ │ ├── CustomButton.tsx
+│ │ ├── CustomInput.tsx
+│ │ ├── CustomPicker.tsx
+│ │ └── FormWrapper.tsx
+│ │
+│ ├── layout/ # Layout e estrutura visual das telas
+│ │ ├── ScreenPageContainer.tsx
+│ │ ├── ScreenPageTitle.tsx
+│ │ └── Footer.tsx
+
+├── constants/ # Constantes e configurações
+│ ├── routes.ts # Definição de rotas
+│ └── usersKey.ts # Chaves de armazenamento
+
+├── lib/utils/ # Funções utilitárias
+│ └── cn.ts # Função auxiliar para classes de estilo
+```
+
 ## Como Executar o Projeto
 
 ### 1. Clonar o repositório
